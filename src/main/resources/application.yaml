@@ -1,0 +1,25 @@
+server:
+  port: ${PORT:8080}
+spring:
+  config:
+    activate:
+      on-profile: local
+proxy:
+  appId: REPLACE_WITH_YOUR_GCP_APP_ID
+  secrets:
+    googlePlacesApiKeySecretVersion: 1
+    googlePlacesApiKeySecretName: GOOGLE_PLACES_API_KEY_TESTING
+    projectID: REPLACE_WITH_YOUR_GCP_PROJECT_ID
+---
+server:
+  port: ${PORT:8080}
+spring:
+  config:
+    activate:
+      on-profile: prod
+proxy:
+  appId: REPLACE_WITH_YOUR_GCP_APP_ID
+  secrets:
+    googlePlacesApiKeySecretVersion: 1
+    googlePlacesApiKeySecretName: GOOGLE_PLACES_API_KEY_PROD
+    projectID: REPLACE_WITH_YOUR_GCP_PROJECT_ID
